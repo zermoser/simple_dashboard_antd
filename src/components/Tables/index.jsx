@@ -31,7 +31,3 @@ Tables.propTypes = {
     selectedRowKeys: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
   }),
 };
-
-Tables.defaultProps = {
-  rowSelection: null,
-};

@@ -79,7 +79,7 @@ export default function VmDetailHeader() {
             <AddMediaHeader>
               <CardVM_Detail
                 data={[
-                  { title: "Infra Name :", detail: "Cluster Number4" },
+                  { title: "Infra Name :", detail: "Cluster Number xxxxx" },
                   { title: "Network IP :", detail: "291.44.456.78" },
                   { title: "IP Address :", detail: "80.127.345.789" },
                   { title: "External :", detail: "80.127.345.789" },

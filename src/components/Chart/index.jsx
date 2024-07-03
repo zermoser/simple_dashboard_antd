@@ -55,11 +55,4 @@ ChartData.propTypes = {
   colors: PropTypes.arrayOf(PropTypes.string),
 };
 
-ChartData.defaultProps = {
-  type: "area",
-  categories: [],
-  series: [],
-  colors: [theme.COLORS.CHART_DEFAULT_2],
-};
-
 export default ChartData;

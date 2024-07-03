@@ -111,6 +111,7 @@ export const Line = styled.div`
   width: 1px;
   height: 110px;
   background-color: ${theme.COLORS.BLUE_MAIN};
+  margin-top: 20px;
   opacity: 30%;
 
   @media only screen and (max-width: 767px) {

@@ -56,12 +56,3 @@ ButtonApp.propTypes = {
   handleClick: PropTypes.func,
   size: PropTypes.oneOf(["small", "medium", "large"]),
 };
-
-ButtonApp.defaultProps = {
-  color: theme.COLORS.WHITE_1,
-  backgroundColor: theme.COLORS.BLUE_MAIN,
-  borderRadius: "10px",
-  marginLeft: "15px",
-  disable: false,
-  size: "small",
-};
