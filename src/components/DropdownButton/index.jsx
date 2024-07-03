@@ -2,17 +2,15 @@ import PropTypes from "prop-types";
 import { Dropdown } from "./styled";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-export default function DropdownButton(props) {
-  const {
-    HeaderDropdown = "Header",
-    TextDropdown_1 = "Text 1",
-    TextDropdown_2 = "Text 2",
-    TextDropdown_3 = "Text 3",
-    LinkPage_1 = "#path1",
-    LinkPage_2 = "#path2",
-    LinkPage_3 = "#path3",
-  } = props;
-
+export default function DropdownButton({
+  HeaderDropdown = "Header",
+  TextDropdown_1 = "Text 1",
+  TextDropdown_2 = "Text 2",
+  TextDropdown_3 = "Text 3",
+  LinkPage_1 = "#path1",
+  LinkPage_2 = "#path2",
+  LinkPage_3 = "#path3",
+}) {
   const DropdownFunction = () => (
     <Dropdown>
       <div className="Dropdown">
@@ -43,14 +41,4 @@ DropdownButton.propTypes = {
   LinkPage_1: PropTypes.string,
   LinkPage_2: PropTypes.string,
   LinkPage_3: PropTypes.string,
-};
-
-DropdownButton.defaultProps = {
-  HeaderDropdown: "Header",
-  TextDropdown_1: "Text 1",
-  TextDropdown_2: "Text 2",
-  TextDropdown_3: "Text 3",
-  LinkPage_1: "#path1",
-  LinkPage_2: "#path2",
-  LinkPage_3: "#path3",
 };

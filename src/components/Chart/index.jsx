@@ -1,53 +1,33 @@
 import PropTypes from "prop-types";
+import ApexCharts from "react-apexcharts";
 import { theme } from "../../theme";
 
-export default function ChartData(props) {
-  const {
-    title,
-    type = "area",
-    categories = [],
-    series = [],
-    width,
-    height,
-    colors = [theme.COLORS.CHART_DEFAULT_2],
-  } = props;
-
-  const VMChart = {
-    options: {
-      colors: [],
-      dataLabels: {
-        enabled: false,
-      },
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        id: "chart",
-      },
-      xaxis: {
-        categories: [],
-      },
+const ChartData = ({
+  title,
+  type = "area",
+  categories = [],
+  series = [],
+  width,
+  height,
+  colors = [theme.COLORS.CHART_DEFAULT_2],
+}) => {
+  const chartOptions = {
+    chart: {
+      id: "basic-bar",
     },
-    series: [],
+    xaxis: {
+      categories: categories,
+    },
+    colors: colors,
   };
 
   return (
     <div>
       <h3>{title}</h3>
-      <Chart
-        options={{
-          ...VMChart.options,
-          xaxis: { categories: categories },
-          colors: colors,
-        }}
-        series={series}
-        width={width}
-        height={height}
-        type={type}
-      />
+      <ApexCharts options={chartOptions} series={series} type={type} width={width} height={height} />
     </div>
   );
-}
+};
 
 ChartData.propTypes = {
   title: PropTypes.string.isRequired,
@@ -81,3 +61,5 @@ ChartData.defaultProps = {
   series: [],
   colors: [theme.COLORS.CHART_DEFAULT_2],
 };
+
+export default ChartData;
