@@ -2,24 +2,19 @@ import { TitlePadding, LayoutScreen, LayoutCardTab } from "./styled";
 import VmDetailHeader from "./VmDetailHeader/index";
 import VmDetailCharts from "./VmDetailCharts/index";
 import VmDetailParameter from "./VmDetailParameter/index";
-
 import { Tabs } from "antd";
 
-export default function VmDetailView() {
-  const onChange = (key) => {
-    console.log(key);
-  };
-  
+const App = () => {
   const items = [
     {
       key: '1',
-      tab: 'Infra Usage',
-      content: <VmDetailCharts />
+      label: 'Infra Usage',
+      children: <VmDetailCharts />
     },
     {
       key: '2',
-      tab: 'Customer Parameter',
-      content: <VmDetailParameter />
+      label: 'Customer Parameter',
+      children: <VmDetailParameter />
     }
   ];
 
@@ -29,15 +24,11 @@ export default function VmDetailView() {
         <VmDetailHeader />
         <TitlePadding />
         <LayoutCardTab>
-          <Tabs onChange={onChange} type="card">
-            {items.map(item => (
-              <Tabs key={item.key} tab={item.tab}>
-                {item.content}
-              </Tabs>
-            ))}
-          </Tabs>
+          <Tabs type="card" defaultActiveKey="1" items={items} />
         </LayoutCardTab>
       </LayoutScreen>
     </div>
   );
-}
+};
+
+export default App;
